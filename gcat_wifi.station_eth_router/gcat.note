@@ -1,0 +1,27 @@
+greatcat wifi client patch for rasp pi 3
+2021.1118.4
+========== ========== ========== ========== 
+Board : Rasp pi 3
+link to ap name : greatcat3
+password : abcdefghi
+========== ========== ========== ========== 
+flash 2017-11-29-raspbian-stretch.img to sd_card#1
+cp patch "gcat_wifi_clinet" to sd_card#1:/home/pi/
+
+boot rasp with sd_card#1
+rasp connect internet over WiFi/wlan0 : greatcat/abcdefgh
+
+sudo apt-get update
+sudo apt-get install dnsmasq
+
+sudo systemctl stop dnsmasq
+
+sudo cp /home/pi/gcat_wifi_client/etc/ / -r
+
+#boot and auto-run
+sudo systemctl enable dnsmasq
+
+reboot
+
+========== ========== ========== ==========
+

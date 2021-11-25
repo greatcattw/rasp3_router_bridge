@@ -1,0 +1,20 @@
+bridge-utils
+	libnl-route-3-200_3.2.27-2_armhf.deb
+	bridge-utils_1.5-13+deb9u1_armhf.deb
+
+dhcp-helper
+	dhcp-helper_1.2-1_armhf.deb
+
+dnsmasq
+	dns-root-data_2019031302~deb9u1_all.deb
+	dnsmasq-base_2.76-5+rpt1+deb9u1_armhf.deb
+	dnsmasq_2.76-5+rpt1+deb9u1_all.deb
+
+hostapd
+	hostapd_2%3a2.6-21~bpo9~rpt1_armhf.deb
+
+parprouted
+	parprouted_0.70-2_armhf.deb
+
+uml-utilities
+	uml-utilities_20070815.1-2_armhf.deb

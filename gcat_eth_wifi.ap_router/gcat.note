@@ -1,0 +1,32 @@
+greatcat wifi ap patch for rasp pi 3
+2021.1118.4
+========== ========== ========== ========== 
+Board : Rasp pi 3
+ap name : greatcat6
+password : abcdefghi
+========== ========== ========== ========== 
+flash 2017-11-29-raspbian-stretch.img to sd_card#1
+cp patch "gcat_wifi_ap_patch" to /home/pi/
+
+boot rasp with sd_card#1
+rasp connect internet over LAN/eth0
+
+sudo apt-get update
+sudo apt-get install dnsmasq hostapd
+
+sudo systemctl stop dnsmasq
+sudo systemctl stop hostapd
+
+#install patch to 
+sudo cp /home/pi/gcat_wifi_ap_patch/etc/ / -r
+
+
+sudo systemctl unmask hostapd
+sudo systemctl enable hostapd
+sudo systemctl start hostapd
+
+sudo systemctl enable dnsmasq
+sudo systemctl start dnsmasq
+
+
+

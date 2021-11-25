@@ -1,0 +1,41 @@
+greatcat wifi ethernet bridge patch for rasp pi 3
+2021.1125.4
+========== ========== ========== ========== 
+Board : Rasp pi 3
+connected ap name : greatcat3
+password : abcdefghi
+========== ========== ========== ========== 
+flash 2017-11-29-raspbian-stretch.img to sd_card#1
+cp patch "gcat_wifi_eth_br_patch" to /home/pi/
+
+boot rasp with sd_card#1
+rasp connect internet over WiFi/wlan0
+
+sudo apt-get update
+sudo apt-get install parprouted uml-utilities dhcp-helper
+
+sudo cp /home/pi/gcat_wifi_eth_br_patch/etc/ / -r
+
+#boot auto-run
+sudo systemctrl enable dhcpcd
+sudo systemctrl enable dhcp-helper
+
+reboot
+
+
+ref
+https://www.itread01.com/content/1546208827.html
+========== ========== ========== ========== 
+
+etc/
+├── avahi
+│   └── avahi-daemon.conf
+├── default
+│   └── dhcp-helper
+├── dhcpcd.conf
+├── network
+│   └── interfaces
+├── sysctl.conf
+└── wpa_supplicant
+    └── wpa_supplicant.conf
+

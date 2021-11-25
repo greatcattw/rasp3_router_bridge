@@ -1,0 +1,30 @@
+greatcat ethernet wifi bridge patch for rasp pi 3
+2021.1123.4
+========== ========== ========== ========== 
+Board : Rasp pi 3
+ap name : greatcat8
+password : abcdefghi
+========== ========== ========== ========== 
+flash 2017-11-29-raspbian-stretch.img to sd_card#1
+cp patch "gcat_eth_wifi_br_patch" to /home/pi/
+
+boot rasp with sd_card#1
+rasp connect internet over LAN/eth0
+
+sudo apt-get update
+sudo apt-get install bridge-utils hostapd
+
+sudo cp /home/pi/gcat_eth_wifi_br_patch/etc/ / -r
+
+#boot auto-run
+sudo systemctrl enable dhcpcd
+sudo systemctrl unmask hostapd
+sudo systemctrl enable hostapd
+
+reboot
+
+
+
+
+sudo cp etc/ / -r
+
